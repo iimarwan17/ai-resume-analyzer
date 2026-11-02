@@ -5,6 +5,7 @@ import { convertPdfToImage } from '~/lib/pdf2img';
 import { usePuterStore } from '~/lib/puter';
 import { generateUUID } from '~/lib/utils';
 import { prepareInstructions } from '../../constants';
+import { useNavigate } from 'react-router';
 
 const Upload = () => {
     const { isLoading, auth, ai, fs, kv } = usePuterStore();
@@ -12,6 +13,7 @@ const Upload = () => {
     const [isProcessing, setIsProcessing] = useState(false);
     const [statusText, setStatusText] = useState('');
     const [file, setFile] = useState<File | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         formRef.current?.reset();
@@ -33,7 +35,11 @@ const Upload = () => {
         setStatusText('Converting to image...');
 
         const imageFile = await convertPdfToImage(file);
-        if (!imageFile.file) return setStatusText('Error: Failed to convert pdf to image!');
+        if (!imageFile.file) {
+            console.error(imageFile.error);
+            setIsProcessing(false);
+            return setStatusText(imageFile.error ?? 'PDF conversion failed');
+        }
 
         setStatusText('Uploading the image...');
 
@@ -45,11 +51,13 @@ const Upload = () => {
         const uuid = generateUUID();
         const data = {
             id: uuid,
-            reumePath: uploadedFile.path,
-            imagePaht: uploadedFile.path,
-            companyName, jobTitle, jobDescription,
-            feedback: ''
-        }
+            resumePath: uploadedFile.path,
+            imagePath: uploadedImage.path,
+            companyName,
+            jobTitle,
+            jobDescription,
+            feedback: '',
+        };
         await kv.set(`resume${uuid}`, JSON.stringify(data));
 
         setStatusText('Analyzing...');
@@ -61,6 +69,7 @@ const Upload = () => {
         await kv.set(`resume${uuid}`, JSON.stringify(data));
         setStatusText('Analysis compelete, redirecting...');
         console.log(data);
+        navigate(`/resume/${uuid}`);
     }
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
