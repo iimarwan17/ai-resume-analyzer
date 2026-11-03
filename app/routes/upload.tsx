@@ -6,9 +6,17 @@ import { usePuterStore } from '~/lib/puter';
 import { generateUUID } from '~/lib/utils';
 import { prepareInstructions } from '../../constants';
 import { useNavigate } from 'react-router';
+import type { Route } from './+types/auth';
+
+export function meta({ }: Route.MetaArgs) {
+    return [
+        { title: "ResumIt | Upload" },
+        { name: "description", content: "Start uploading the resume." },
+    ];
+}
 
 const Upload = () => {
-    const { isLoading, auth, ai, fs, kv } = usePuterStore();
+    const { ai, fs, kv } = usePuterStore();
     const formRef = useRef<HTMLFormElement>(null);
     const [isProcessing, setIsProcessing] = useState(false);
     const [statusText, setStatusText] = useState('');
@@ -85,7 +93,6 @@ const Upload = () => {
         if (!file) return;
 
         handleAnalyze({ companyName, jobTitle, jobDescription, file });
-
     }
 
     return (
@@ -123,8 +130,6 @@ const Upload = () => {
                         </form>
                     )}
                 </div>
-
-
             </section>
         </main>
     )
