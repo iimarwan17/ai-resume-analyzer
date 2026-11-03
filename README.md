@@ -1,87 +1,178 @@
-# Welcome to React Router!
+🚀 AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Your AI-powered career companion. Analyze your resume, improve your professional profile, and get closer to landing your dream job.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+<p align="center">
+  <a href="https://jsm-ai-resume-analyzer-71b9-d3aub.puter.site">
+    <strong>🌐 Live Demo</strong>
+  </a>
+  &nbsp; • &nbsp;
+  <a href="https://github.com/iimarwan17/ai-resume-analyzer">
+    <strong>📂 Repository</strong>
+  </a>
+</p>
 
-## Features
+✨ Overview
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+AI Resume Analyzer is a modern web application designed to help job seekers optimize their resumes using AI-powered insights.
 
-## Getting Started
+Get meaningful feedback, identify areas for improvement, and make your resume stand out in today's competitive job market.
 
-### Installation
+🔥 Features
 
-Install the dependencies:
+🤖 AI-Powered Analysis – Get intelligent insights and feedback on your resume.
 
-```bash
+📊 Resume Scoring – Evaluate your resume with detailed scoring.
+
+🎯 ATS Compatibility – Understand how well your resume performs against Applicant Tracking Systems.
+
+💡 Actionable Feedback – Discover strengths, weaknesses, and opportunities for improvement.
+
+📄 PDF Upload – Upload your resume for analysis.
+
+⚡ Modern Experience – Enjoy a responsive and intuitive interface.
+
+🛠️ Tech Stack
+
+Technology
+
+Purpose
+
+React
+
+User interface
+
+TypeScript
+
+Type safety
+
+React Router
+
+Routing and application framework
+
+Tailwind CSS
+
+Styling
+
+Puter.js
+
+AI and application services
+
+Vite
+
+Development and build tooling
+
+📸 Preview
+
+<p align="center">
+  <em>Explore the live application to experience AI-powered resume analysis.</em>
+</p>
+
+🔗 Try AI Resume Analyzer
+
+🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+Prerequisites
+
+Make sure you have installed:
+
+Node.js
+
+npm (comes with Node.js)
+
+Git
+
+1. Clone the Repository
+
+git clone https://github.com/iimarwan17/ai-resume-analyzer.git
+
+cd ai-resume-analyzer
+
+2. Install Dependencies
+
 npm install
-```
 
-### Development
+3. Start Development Server
 
-Start the development server with HMR:
-
-```bash
 npm run dev
-```
 
-Your application will be available at `http://localhost:5173`.
+Open your browser and visit:
 
-## Building for Production
+http://localhost:5173
 
-Create a production build:
+📦 Production Build
 
-```bash
+Build the application for production:
+
 npm run build
-```
 
-## Deployment
+To run the production build locally:
 
-### Docker Deployment
+npm run start
 
-To build and run using Docker:
+🐳 Deployment
 
-```bash
-docker build -t my-app .
+The application supports Docker-based deployment.
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+docker build -t ai-resume-analyzer .
+docker run -p 3000:3000 ai-resume-analyzer
 
-The containerized application can be deployed to any platform that supports Docker, including:
+You can deploy containerized applications to platforms such as:
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+AWS ECS
 
-### DIY Deployment
+Google Cloud Run
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+Azure Container Apps
 
-Make sure to deploy the output of `npm run build`
+DigitalOcean
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+Fly.io
 
-## Styling
+Railway
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+📁 Project Structure
 
----
+ai-resume-analyzer/
+│
+├── app/                 # Application routes and components
+├── components/          # Reusable UI components
+├── constants/           # Application constants
+├── lib/                 # Utilities and integrations
+├── public/              # Static assets
+├── package.json         # Dependencies and scripts
+├── react-router.config.ts
+├── tsconfig.json
+└── vite.config.ts
 
-Built with ❤️ using React Router.
+Note: Project structure may vary depending on the current implementation.
+
+🧑‍💻 Contributing
+
+Contributions, suggestions, and feedback are always welcome!
+
+Fork the repository.
+
+Create a feature branch.
+
+Commit your changes.
+
+Push your branch.
+
+Open a Pull Request.
+
+👨‍💻 Author
+
+Marwan Hany
+
+GitHub: @iimarwan17
+
+LinkedIn: Marwan Hany
+
+<p align="center">
+  Built with ❤️, React, and AI.
+  <br/>
+  <strong>AI Resume Analyzer — Make your next career move count.</strong>
+</p>
